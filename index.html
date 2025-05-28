@@ -1,199 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CustomerCare Pro</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    body {
-      background-color: #f4f4f4;
-      color: #333;
-    }
-
-    header {
-      background-color: #005f73;
-      color: #fff;
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      font-size: 1.8rem;
-    }
-
-    nav a {
-      color: #fff;
-      margin-left: 1.5rem;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .hero {
-      background-color: #0a9396;
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .section {
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .services {
-      display: flex;
-      flex-wrap: wrap;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Microsoft Customer Service</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap');
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f6fb;
+    color: #222;
+    line-height: 1.6;
+  }
+  header {
+    background: #0078d7;
+    color: white;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
+  }
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+  header p {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.8;
+  }
+  main {
+    max-width: 900px;
+    margin: 3rem auto 4rem;
+    padding: 0 1.5rem;
+  }
+  .info {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .info h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #004e9a;
+  }
+  .info p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #333;
+  }
+  .call-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .call-button {
+    background: #0078d7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 1.25rem 2.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 6px 12px rgb(0 120 215 / 0.3);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+  }
+  .call-button:hover,
+  .call-button:focus {
+    background: #005aab;
+    box-shadow: 0 8px 16px rgb(0 90 171 / 0.5);
+    outline: none;
+  }
+  .call-button svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+  }
+  .content-section {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.07);
+    color: #222;
+  }
+  .content-section h3 {
+    color: #0078d7;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+  .content-section p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #444;
+  }
+  .content-section ul {
+    padding-left: 1.4rem;
+    color: #444;
+  }
+  .content-section ul li {
+    margin-bottom: 0.6rem;
+  }
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    color: #888;
+    border-top: 1px solid #ddd;
+    margin-top: 4rem;
+  }
+  @media (max-width: 480px) {
+    .call-button {
+      flex: 1 1 100%;
       justify-content: center;
-      gap: 2rem;
     }
-
-    .service-box {
-      background-color: #fff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      width: 280px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+    .content-section {
+      padding: 1.5rem 1.5rem;
     }
-
-    .service-box:hover {
-      transform: translateY(-5px);
-    }
-
-    .service-box h3 {
-      margin-bottom: 0.8rem;
-      color: #005f73;
-    }
-
-    .contact-form {
-      max-width: 500px;
-      margin: auto;
-      background-color: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .contact-form label {
-      display: block;
-      margin: 1rem 0 0.5rem;
-      text-align: left;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.7rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .contact-form button {
-      margin-top: 1rem;
-      background-color: #005f73;
-      color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .contact-form button:hover {
-      background-color: #0a9396;
-    }
-
-    footer {
-      background-color: #001219;
-      color: #fff;
-      padding: 1.5rem;
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    @media (max-width: 600px) {
-      .services {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-
-  <header>
-    <h1>CustomerCare Pro</h1>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h2>We're Here to Help</h2>
-    <p>Providing top-notch customer service to ensure your satisfaction. Fast, friendly, and efficient support 24/7.</p>
+<header>
+  <h1>Microsoft Customer Service</h1>
+  <p>We're here to help you with your Microsoft products and services</p>
+</header>
+<main>
+  <section class="info" aria-label="Customer service information">
+    <h2>Contact Our Support Team</h2>
+    <p>If you need assistance with any Microsoft product or service, reach out to us using the numbers below. Our friendly customer service representatives are ready to help you 24/7.</p>
+  </section>
+  <section class="call-buttons" aria-label="Call buttons for customer service">
+    <button class="call-button" onclick="makeCall('1-800-MICROSOFT')">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.21 1.11l-2.24 2.1z"/>
+      </svg>
+      Call Toll-Free: 1-800-MICROSOFT
+    </button>
+    <button class="call-button" onclick="makeCall('1-877-555-1234')">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.21 1.11l-2.24 2.1z"/>
+      </svg>
+      Call Customer Service: 1-877-555-1234
+    </button>
+    <button class="call-button" onclick="makeCall('1-866-555-9876')">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.21 1.11l-2.24 2.1z"/>
+      </svg>
+      Call Technical Support: 1-866-555-9876
+    </button>
   </section>
 
-  <section class="section" id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="service-box">
-        <h3>Live Chat Support</h3>
-        <p>Instantly connect with our team via live chat anytime you need help.</p>
-      </div>
-      <div class="service-box">
-        <h3>Email Assistance</h3>
-        <p>Send us an email and receive a detailed response within 24 hours.</p>
-      </div>
-      <div class="service-box">
-        <h3>Phone Support</h3>
-        <p>Talk to a real person and get direct help for your concerns or inquiries.</p>
-      </div>
-    </div>
+  <section class="content-section" aria-label="Detailed Microsoft customer service information">
+    <h3>About Microsoft Customer Service</h3>
+    <p>Microsoft is committed to providing exceptional customer service to help users get the most out of their products and services. Whether you are an individual consumer, a business user, or an IT professional, Microsoft's customer support channels are designed to offer quick, reliable assistance for all your needs. From troubleshooting technical issues to billing inquiries and product guidance, the customer service team is available around the clock to support you.</p>
+    
+    <h3>Types of Support Available</h3>
+    <p>Microsoft offers a variety of customer support options to address diverse needs, including:</p>
+    <ul>
+      <li><strong>Technical Support:</strong> Assistance with software installation, troubleshooting errors, fixing bugs, and resolving hardware compatibility problems.</li>
+      <li><strong>Billing and Account Services:</strong> Help with subscriptions, payments, refunds, account access issues, and Microsoft Store purchases.</li>
+      <li><strong>Product Information:</strong> Guidance on product features, updates, and usage tips to maximize your experience.</li>
+      <li><strong>Enterprise Solutions:</strong> Dedicated support for businesses regarding cloud services (Azure), Office 365, and enterprise licensing.</li>
+      <li><strong>Accessibility Support:</strong> Help for customers with disabilities to use Microsoft products and services effectively.</li>
+    </ul>
+
+    <h3>How to Get the Most Efficient Support</h3>
+    <p>To get the best experience when contacting Microsoft Customer Service, consider the following tips:</p>
+    <ul>
+      <li><strong>Know Your Product Details:</strong> Gather your product key, account information, and version numbers before reaching out.</li>
+      <li><strong>Detail Your Issue Clearly:</strong> Describe the problem you are experiencing with as much detail as possible, including error messages or screenshots if available.</li>
+      <li><strong>Check Online Resources First:</strong> Microsoft offers extensive online guides, FAQs, and community forums that might provide immediate answers.</li>
+      <li><strong>Choose the Appropriate Support Channel:</strong> For urgent technical problems, a phone call might be best, while billing inquiries may be handled through chat or email support.</li>
+      <li><strong>Be Patient and Polite:</strong> Customer service representatives are there to help; clear, respectful communication speeds up resolution.</li>
+    </ul>
+
+    <h3>Common Issues Microsoft Customer Service Can Assist With</h3>
+    <p>Microsoft customer service can help you resolve a variety of common issues, including but not limited to:</p>
+    <ul>
+      <li>Activation and installation errors for Windows and Office products.</li>
+      <li>Recovering or resetting Microsoft account passwords.</li>
+      <li>Troubleshooting Xbox console problems and gaming service issues.</li>
+      <li>Guidance on setting up and configuring Microsoft 365 subscriptions.</li>
+      <li>Resolving errors related to OneDrive syncing and storage.</li>
+      <li>Assisting with security and privacy concerns.</li>
+      <li>Answering questions about new feature updates and software compatibility.</li>
+    </ul>
+
+    <h3>Why Choose Microsoft Customer Support?</h3>
+    <p>Microsoft's support ecosystem is designed to be comprehensive, accessible, and customer-centric. With thousands of trained support agents worldwide, multiple language options, and a range of support formats, it ensures users spend less time frustrated with technical roadblocks and more time being productive.</p>
+    <p>Moreover, Microsoft's continuous investment in training and technology advancements allows customers to benefit from timely, knowledgeable, and effective help. The company’s focus on innovation extends to its customer service, utilizing AI chatbots, self-help portals, and streamlined contact options to create a seamless support journey.</p>
+
+    <h3>How to Contact Microsoft Customer Service</h3>
+    <p>Besides the phone numbers listed above, Microsoft offers various ways to get in touch:</p>
+    <ul>
+      <li><strong>Online Chat Support:</strong> Instant messaging with a support agent via Microsoft’s official support website.</li>
+      <li><strong>Microsoft Support Website:</strong> Access a comprehensive library of articles, tutorials, and diagnostic tools.</li>
+      <li><strong>Community Forums:</strong> Engage with other users and Microsoft experts to find solutions.</li>
+      <li><strong>Social Media:</strong> Reach out to Microsoft’s verified social media channels for updates and help.</li>
+    </ul>
+    <p>For quick assistance, use the phone numbers above to speak directly with a trained representative who can guide you step-by-step to resolve your issue.</p>
+
+    <h3>Final Thoughts</h3>
+    <p>Whether you’re setting up your first Windows PC, managing a large enterprise environment, or troubleshooting advanced technical issues, Microsoft Customer Service is ready to guide you every step of the way. Utilizing the right contact method and being prepared with detailed information can help ensure your support experience is smooth and efficient.</p>
+    <p>Thank you for choosing Microsoft. We look forward to serving you and helping you get the most from your Microsoft products.</p>
   </section>
-
-  <section class="section" id="contact">
-    <h2>Contact Us</h2>
-    <form class="contact-form">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required />
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <footer>
-    &copy; 2025 CustomerCare Pro. All rights reserved.
-  </footer>
-
+</main>
+<footer>
+  &copy; 2024 Microsoft Corporation. All rights reserved.
+</footer>
+<script>
+  function makeCall(number) {
+    alert(`Dialing ${number}...`);
+  }
+</script>
 </body>
 </html>
+
